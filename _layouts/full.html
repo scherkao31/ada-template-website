@@ -10,8 +10,38 @@ layout: full
     <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}">
     <meta name="viewport" content="width=device-width">
+    <!-- Add your custom styles or link to a CSS file for the header -->
+    <style>
+      .site-header {
+        background: #ffffff; /* Adjust the color to match your site */
+        margin-bottom: 50px;
+        padding: 10px 0;
+      }
+      .site-header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .site-header nav a {
+        margin: 0 15px;
+        color: #333333; /* Adjust the color to match your site */
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .site-header nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
+    <header class="site-header">
+      <nav>
+        <a href="/">The Recipe For a Movie's Success</a>
+        <!-- Add additional navigation links here -->
+        <a href="/resources">Resources</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
     <div class="wrapper">
 
       {{ content }}
