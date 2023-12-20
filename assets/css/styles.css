@@ -108,10 +108,28 @@ header {
   width: 100%;
   -webkit-font-smoothing: subpixel-antialiased;
   display: flex; /* Use flexbox for horizontal layout */
+  flex-direction: column; 
   justify-content: space-between; /* Space out the title and navigation */
   align-items: center; /* Align items vertically */
   padding: 10px 50px; /* Adjust padding as needed */
   box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Style for the navigation menu */
+header nav {
+  align-self: stretch; /* Stretch the nav to full width of the header */
+  display: flex; /* Use flexbox for the nav */
+  justify-content: center; /* Center the menu items */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  list-style-type: none; /* Remove list item bullets */
+}
+
+/* Style for each navigation item */
+header nav a {
+  margin: 0 10px; /* Add horizontal spacing between links */
+  text-decoration: none; /* Optional: remove underline from links */
+  /* ... other styles ... */
 }
 
 /* Adjust header ul for horizontal layout */
@@ -145,6 +163,17 @@ header ul a {
 header li:first-child a, header li:last-child a, header ul a:hover, header ul a:active {
   border-radius: 0;
   background-color: transparent;
+}
+
+/* Ensure list items do not stack */
+header ul li {
+  display: inline-block; /* Display list items in-line */
+  margin-right: 20px; /* Add some space between the list items */
+}
+
+/* Remove the last margin from the last item for proper alignment */
+header ul li:last-child {
+  margin-right: 0;
 }
 
 /* Remove styles for the no longer needed positioning */
