@@ -4,6 +4,6 @@ description: A template website for ADA yay
 show_downloads: True
 navigation:
   - title: README
-    url: /
+    url: readme
   - title: Example
     url: example
