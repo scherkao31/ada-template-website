@@ -159,60 +159,44 @@ header ul a {
   padding: 5px 10px; /* Adjust padding as necessary */
 }
 
-/* Remove border radius and border styles */
-header li:first-child a, header li:last-child a, header ul a:hover, header ul a:active {
-  border-radius: 0;
-  background-color: transparent;
+/* This is the container for your entire header */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* Aligns children (title and nav) on opposite ends */
+  align-items: center; /* Centers children vertically */
+  padding: 20px 50px; /* Add padding to give some space inside the header */
+  background-color: #fff; /* Assuming you want a white background; adjust as needed */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for depth */
 }
 
-/* Ensure list items do not stack */
-header ul li {
-  display: inline-block; /* Display list items in-line */
-  margin-right: 20px; /* Add some space between the list items */
+/* This styles the title or logo part of your header */
+.site-header .title {
+  font-size: 24px; /* Adjust the size as needed */
+  font-weight: bold; /* Makes the title bold */
 }
 
-/* Remove the last margin from the last item for proper alignment */
-header ul li:last-child {
-  margin-right: 0;
+/* This is the navigation menu */
+.site-header nav {
+  display: flex;
 }
 
-/* Remove styles for the no longer needed positioning */
-header ul li + li + li {
-  border-right: none;
+/* This styles each navigation link */
+.site-header nav a {
+  margin-left: 20px; /* Space out the nav items */
+  text-decoration: none; /* Removes the underline from links */
+  color: #333; /* Makes the text color dark grey; adjust as needed */
+  font-size: 16px; /* Adjust the size as needed */
 }
 
-header ul a:hover {
-  color:#999;
+.site-header nav a:hover {
+  text-decoration: underline; /* Adds underline on hover for visual feedback */
 }
 
-header ul a:active {
-  background-color:#f0f0f0;
+/* Clear margin for the first item so it aligns neatly with the title */
+.site-header nav a:first-child {
+  margin-left: 0;
 }
 
-strong {
-  color:#222;
-  font-weight:500;
-}
-
-header ul li + li + li {
-  border-right:none;
-  width:89px;
-}
-
-header ul a strong {
-  font-size:14px;
-  display:block;
-  color:#222;
-}
-
-/* Adjust section to provide some space from the new top header */
-section {
-  width: calc(100% - 100px); /* Adjust width as necessary */
-  margin-top: 70px; /* Give some space on top to not overlap with the header */
-  float: none;
-  padding: 20px 50px; /* Adjust padding as necessary */
-  box-sizing: border-box;
-}
 
 small {
   font-size:11px;
@@ -232,6 +216,24 @@ footer {
   position: static;
   padding: 10px 50px; /* Adjust padding as necessary */
   box-sizing: border-box;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns title and nav to the start of the flex container */
+  }
+
+  .site-header nav {
+    width: 100%; /* Full width to accommodate a vertical layout on smaller screens */
+    justify-content: space-between; /* Spreads nav items out */
+    padding-top: 10px; /* Adds space between title and nav items */
+  }
+
+  .site-header nav a {
+    margin: 5px 0; /* Adjusts spacing for a vertical layout */
+  }
 }
 
 @media print, screen and (max-width: 960px), screen and (max-width: 720px), screen and (max-width: 480px) {
