@@ -103,46 +103,53 @@ img {
   max-width:100%;
 }
 
+/* Updated header styles */
 header {
-  width:270px;
-  float:left;
-  position:fixed;
-  -webkit-font-smoothing:subpixel-antialiased;
+  width: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Space out the title and navigation */
+  align-items: center; /* Align items vertically */
+  padding: 10px 50px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Adjust header ul for horizontal layout */
 header ul {
-  list-style:none;
-  height:40px;
-  padding:0;
-  background: #f4f4f4;
-  border-radius:5px;
-  border:1px solid #e0e0e0;
-  width:270px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  width: auto; /* Adjust width as necessary */
 }
 
+/* Adjust header li for horizontal layout */
 header li {
-  width:89px;
-  float:left;
-  border-right:1px solid #e0e0e0;
-  height:40px;
+  width: auto; /* Adjust width as necessary */
+  float: none;
+  border-right: none;
+  height: auto;
 }
-
-header li:first-child a {
-  border-radius:5px 0 0 5px;
-}
-
-header li:last-child a {
-  border-radius:0 5px 5px 0;
-}
-
+/* Adjust header ul a for new layout */
 header ul a {
-  line-height:1;
-  font-size:11px;
-  color:#999;
-  display:block;
-  text-align:center;
-  padding-top:6px;
-  height:34px;
+  line-height: 1.5;
+  font-size: 14px; /* Adjust font size as necessary */
+  color: #333; /* Adjust text color as necessary */
+  display: block;
+  padding: 5px 10px; /* Adjust padding as necessary */
+}
+
+/* Remove border radius and border styles */
+header li:first-child a, header li:last-child a, header ul a:hover, header ul a:active {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* Remove styles for the no longer needed positioning */
+header ul li + li + li {
+  border-right: none;
 }
 
 header ul a:hover {
@@ -169,10 +176,13 @@ header ul a strong {
   color:#222;
 }
 
+/* Adjust section to provide some space from the new top header */
 section {
-  width:750px;
-  float:right;
-  padding-bottom:50px;
+  width: calc(100% - 100px); /* Adjust width as necessary */
+  margin-top: 70px; /* Give some space on top to not overlap with the header */
+  float: none;
+  padding: 20px 50px; /* Adjust padding as necessary */
+  box-sizing: border-box;
 }
 
 small {
@@ -186,15 +196,16 @@ hr {
   margin:0 0 20px;
 }
 
+/* Footer no longer needs to be fixed */
 footer {
-  width:270px;
-  float:left;
-  position:fixed;
-  bottom:50px;
-  -webkit-font-smoothing:subpixel-antialiased;
+  width: 100%;
+  float: none;
+  position: static;
+  padding: 10px 50px; /* Adjust padding as necessary */
+  box-sizing: border-box;
 }
 
-@media print, screen and (max-width: 960px) {
+@media print, screen and (max-width: 960px), screen and (max-width: 720px), screen and (max-width: 480px) {
 
   div.wrapper {
     width:auto;
@@ -202,11 +213,13 @@ footer {
   }
 
   header, section, footer {
-    float:none;
-    position:static;
-    width:auto;
+    float: none;
+    position: static;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
   }
-
+  
   header {
     padding-right:320px;
   }
