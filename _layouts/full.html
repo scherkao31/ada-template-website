@@ -13,24 +13,35 @@ layout: full
     <!-- Add your custom styles or link to a CSS file for the header -->
     <style>
       .site-header {
-        background: #ffffff; /* Adjust the color to match your site */
-        margin-bottom: 50px;
-        padding: 10px 0;
-      }
-      .site-header nav {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        padding: 20px 50px; /* Adjust the padding as needed */
+        background-image: url('/path-to-your-header-background.jpg');
+        background-size: cover;
+        background-position: center;
       }
-      .site-header nav a {
-        margin: 0 15px;
-        color: #333333; /* Adjust the color to match your site */
+      
+      .site-header .title a {
+        font-size: 28px; /* Adjust the size as needed */
+        color: #fff; /* This is white, adjust if your background is light */
         text-decoration: none;
-        font-weight: bold;
       }
-      .site-header nav a:hover {
+      
+      nav {
+        display: flex;
+      }
+      
+      nav a {
+        color: #fff; /* This is white, adjust if your background is light */
+        margin-left: 20px; /* Spacing between nav items */
+        text-decoration: none;
+      }
+      
+      nav a:hover {
         text-decoration: underline;
       }
+
     </style>
   </head>
   <body>
