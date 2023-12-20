@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # ADA Template Website
 Index now bim
 ## Usage
