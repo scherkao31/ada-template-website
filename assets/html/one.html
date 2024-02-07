@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistic Regression Inference</title>
+</head>
+<body>
+<h2>Logistic Regression Prediction</h2>
+<form id="logisticForm">
+    <label for="feature1">Feature 1 (x1):</label><br>
+    <input type="number" id="feature1" name="feature1"><br>
+    <label for="feature2">Feature 2 (x2):</label><br>
+    <input type="number" id="feature2" name="feature2"><br><br>
+    <input type="button" value="Predict" onclick="predict()">
+</form>
+<p id="prediction">Prediction will appear here.</p>
+
+<script>
+// Logistic regression model parameters
+const beta0 = /* Intercept (β0) value here */;
+const beta1 = /* Coefficient for feature 1 (β1) */;
+const beta2 = /* Coefficient for feature 2 (β2) */;
+
+function predict() {
+    // Get feature values from form
+    const x1 = parseFloat(document.getElementById('feature1').value);
+    const x2 = parseFloat(document.getElementById('feature2').value);
+    
+    // Calculate logistic regression model output
+    const z = beta0 + (beta1 * x1) + (beta2 * x2);
+    const prediction = 1 / (1 + Math.exp(-z));
+    
+    // Display the prediction
+    document.getElementById('prediction').innerHTML = `Prediction: ${prediction}`;
+}
+
+</script>
+</body>
+</html>
