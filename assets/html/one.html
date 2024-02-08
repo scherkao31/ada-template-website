@@ -12,9 +12,11 @@
     <input type="number" id="feature1" name="feature1"><br>
     <label for="feature2">Feature 2 (Beta2pourcent):</label><br>
     <input type="number" id="feature2" name="feature2"><br>
-    <label for="feature3">Feature 3 (PS):</label><br>
+    <label for="feature2">Feature 3 (Beta1pourcent):</label><br>
+    <input type="number" id="feature2" name="feature2"><br>
+    <label for="feature3">Feature 4 (PS):</label><br>
     <input type="number" id="feature3" name="feature3"><br>
-    <label for="feature4">Feature 4 (IgA):</label><br>
+    <label for="feature4">Feature 5 (IgA):</label><br>
     <input type="number" id="feature4" name="feature4"><br><br>
     <input type="button" value="Predict" onclick="predict()">
 </form>
@@ -25,12 +27,13 @@
 const beta0 = 0.41394254; // Intercept (β0)
 const beta1 = 0.50015086; // Coefficient for feature 1 (β1)
 const beta2 = 2.01806685; // Coefficient for feature 2 (β2)
-const beta3 = 0.26114218; // Coefficient for feature 3 (β3)
-const beta4 = 0.10968544; // Coefficient for feature 4 (β4)
+const beta3 = 2.01806685; // Coefficient for feature 3 (β3)    
+const beta4 = 0.26114218; // Coefficient for feature 4 (β4)
+const beta5 = 0.10968544; // Coefficient for feature 5 (β5)
 
 // Means and standard deviations for scaling
-const means = [63.78104575,  0.10043791, 70.47679739,  4.73477124];
-const stdDevs = [12.73078843,  0.07044892,  9.2792032 ,  6.76468126];
+const means = [63.78104575,  0.1, 0.10043791, 70.47679739,  4.73477124];
+const stdDevs = [12.73078843,  0,1, 0.07044892,  9.2792032 ,  6.76468126];
 
 function customScaler(X, means, stdDevs) {
   // Scale features using provided means and standard deviations
@@ -44,12 +47,13 @@ function predict() {
     let x2 = parseFloat(document.getElementById('feature2').value);
     let x3 = parseFloat(document.getElementById('feature3').value);
     let x4 = parseFloat(document.getElementById('feature4').value);
+    let x5 = parseFloat(document.getElementById('feature5').value);
 
     // Scale the input features
-    [x1, x2, x3, x4] = customScaler([x1, x2, x3, x4], means, stdDevs);
+    [x1, x2, x3, x4, x5] = customScaler([x1, x2, x3, x4, x5], means, stdDevs);
     
     // Calculate logistic regression model output
-    const z = beta0 + (beta1 * x1) + (beta2 * x2) + (beta3 * x3) + (beta4 * x4);
+    const z = beta0 + (beta1 * x1) + (beta2 * x2) + (beta3 * x3) + (beta4 * x4) + (beta5 * x5);
     const prediction = 1 / (1 + Math.exp(-z));
     
     // Display the prediction
