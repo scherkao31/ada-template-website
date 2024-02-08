@@ -1,6 +1,8 @@
 ---
 layout: full
 ---
+
+
 ![betaanomaly.png.png](./assets/img/betaanomaly.png)
 
 Or directly here
