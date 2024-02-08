@@ -10,9 +10,9 @@
 <form id="logisticForm">
     <label for="feature1">Feature 1 (Age):</label><br>
     <input type="number" id="feature1" name="feature1"><br>
-    <label for="feature2">Feature 2 (Beta2pourcent):</label><br>
+    <label for="feature2">Feature 2 (Beta1pourcent):</label><br>
     <input type="number" id="feature2" name="feature2"><br>
-    <label for="feature2">Feature 3 (Beta1pourcent):</label><br>
+    <label for="feature2">Feature 3 (Beta2pourcent):</label><br>
     <input type="number" id="feature3" name="feature2"><br>
     <label for="feature3">Feature 4 (PS):</label><br>
     <input type="number" id="feature4" name="feature3"><br>
@@ -25,15 +25,15 @@
 <script>
 // Logistic regression model parameters
 const beta0 = 0.41394254; // Intercept (β0)
-const beta1 = 0.50015086; // Coefficient for feature 1 (β1)
-const beta2 = 2.01806685; // Coefficient for feature 2 (β2)
-const beta3 = 2.01806685; // Coefficient for feature 3 (β3)    
-const beta4 = 0.26114218; // Coefficient for feature 4 (β4)
-const beta5 = 0.10968544; // Coefficient for feature 5 (β5)
+const beta1 = 0.49652394; // Coefficient for feature 1 (β1)
+const beta2 = 0.7196421; // Coefficient for feature 2 (β2)
+const beta3 = 2.87173491; // Coefficient for feature 3 (β3)    
+const beta4 = 0.11600637; // Coefficient for feature 4 (β4)
+const beta5 = -0.07001341; // Coefficient for feature 5 (β5)
 
 // Means and standard deviations for scaling
-const means = [63.78104575,  0.1, 0.10043791, 70.47679739,  4.73477124];
-const stdDevs = [12.73078843,  0,1, 0.07044892,  9.2792032 ,  6.76468126];
+const means = [63.78104575,  0.0702742484, 0.10043791, 70.47679739,  4.73477124];
+const stdDevs = [12.73078843,  0.02997881, 0.07044892,  9.2792032 ,  6.76468126];
 
 function customScaler(X, means, stdDevs) {
   // Scale features using provided means and standard deviations
