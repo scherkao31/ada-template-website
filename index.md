@@ -1,8 +1,6 @@
 ---
-layout: default
+layout: full
 ---
-
-# Site de petit 7eul : CHERKAOUI SCORE
 
 Check out the logistic regression prediction tool [here](https://scherkao31.github.io/ada-template-website/assets/html/one.html)
 Or directly here
