@@ -55,9 +55,12 @@ function predict() {
     // Calculate logistic regression model output
     const z = beta0 + (beta1 * x1) + (beta2 * x2) + (beta3 * x3) + (beta4 * x4) + (beta5 * x5);
     const prediction = 1 / (1 + Math.exp(-z));
+
+    // Round the prediction to 4 decimal places
+    const roundedPrediction = Number(prediction.toFixed(4));
     
     // Display the prediction
-    document.getElementById('prediction').innerHTML = `Prediction: ${prediction}`;
+    document.getElementById('roundedPrediction').innerHTML = `Score of being positive: ${prediction}`;
 }
 </script>
 </body>
